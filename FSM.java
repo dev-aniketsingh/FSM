@@ -1,18 +1,5 @@
 package fsm;
 import java.util.*;
-
-/**
- * Skeleton for creating your own FSM.
- * To create your own FSM, do the following:
- * 1) Remove the existing "flower" states (Night, Morning, Afternoon)
- * 2) Add your own classes. They must be static classes derived from
- *    the State class, and must implement enter, exit, and updateAndCheckTransitions.
- * 3) Add any state variables you need to keep track of throughout the
- *    FSM (like the static int water below).
- * 4) Modify main to populate the array of State objects with an instance
- *    of each of your states.
- * @author jrsullins
- */
 public class FSM {
 
     private static int confidenceLvel = 5;
@@ -21,11 +8,6 @@ public class FSM {
     private static int angerLevel = 0;
 
 
-    /**
-     * Abstract base class of all states. Note that it has
-     * been made static so we can use it in the static main
-     * method. Do not change this!
-     */
     public static abstract class State {
         protected Scanner input = new Scanner(System.in);
         protected Random random = new Random();
@@ -44,13 +26,6 @@ public class FSM {
            return result;
         }
     }
-
-    /**
-     * Replace the below classes with your state classes. Each must be
-     * static and must extend the State class, implementing enter, exit,
-     * and updateAndCheckTranistions.
-     */
-
 
     public static class chasePlayer extends State {
 
@@ -101,10 +76,6 @@ public class FSM {
         }
     }
 
-    /**
-     * This class represents the state in which the flower is open and facing east.
-     * It transitions to Afternoon when the sun is to the west.
-     */
      public static class makingFriend extends State {
          public makingFriend() {
              super();
